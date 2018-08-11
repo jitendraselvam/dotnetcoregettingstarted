@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace ConsoleApp1
 {
@@ -44,6 +45,11 @@ namespace ConsoleApp1
                         DisplayShoppingCart();
                         break;
                     }
+                    case 4:
+                    {
+                        Console.WriteLine(JsonConvert.SerializeObject(shoppingCart));
+                        break;
+                    }
                     default:
                     {
                         exit = false;
@@ -77,6 +83,7 @@ namespace ConsoleApp1
             Console.WriteLine("\n\n1. Add items to cart");
             Console.WriteLine("2. Remove items from cart");
             Console.WriteLine("3. Display cart");
+            Console.WriteLine("4. JSON Convert the cart");
             Console.WriteLine("Any other number to exit\n\n");
         }
 
